@@ -35,9 +35,8 @@ class mapManager {
 		/**
 		* Constructor
 		* @param imap an array of type point
-		*/
-		template <std::size_t N, std::size_t TS>
-        mapManager (point<TS> imap[]);
+		*/	
+		mapManager (point<TS> imap[]);
 		
 		
 		// ------------

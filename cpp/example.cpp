@@ -7,9 +7,18 @@
 // -----------------------------------------
 
 
+/*
+To run program
+	% g++ example.cpp -o example 
+	% ./example
+
+*/
+
+
 #include <iostream>      // cout, endl
 #include "types.h"       // point, region 
 #include "mapManager.h"  // manager
+#include "mapManager.cpp"  // manager
 
 using namespace std;
 
