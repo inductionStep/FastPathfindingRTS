@@ -1,6 +1,11 @@
-/*
-	Compile: g++ -framework OpenGL -framework GLUT -o mapManager mapManager.c++
-*/
+// -----------------------------------------
+// example.cpp
+//
+// by: Diego Rojas (github::inductionStep)
+// 2011-2013
+// MIT licence
+// -----------------------------------------
+
 
 #include <iostream>      // cout, endl
 #include "types.h"       // point, region 

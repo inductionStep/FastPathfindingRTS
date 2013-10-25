@@ -11,7 +11,7 @@
 
 template <std::size_t N, std::size_t TS>
 mapManager<N, TS>::mapManager (point<TS> imap[]){
-	//Table of Normals to a directions
+	//Table of Normals to all directions
 	Ndirections[0] = 2;//5 Down
 	Ndirections[1] = 3;//7 Left
 	Ndirections[2] = 3;//7 Left
