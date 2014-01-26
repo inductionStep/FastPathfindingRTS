@@ -22,11 +22,13 @@ struct point{
 	short int rId;
 	bool visited;
 	int color;
-	unsigned char connectors[TS*TS]; 
+	//unsigned char connectors[TS*TS];
+    std::vector<unsigned char> connectors;
 	
 	point (){
 		rId = -1;
 		visited = false;
+		connectors.resize(TS*TS);
 	}
 	
 	void reset(){

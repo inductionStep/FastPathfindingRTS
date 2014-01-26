@@ -22,8 +22,8 @@ To run program
 
 using namespace std;
 
-const int SIZE = 200;
-const int TS   = 10;
+const int SIZE = 300;
+const int TS   = 12;
 
 
 //------------------------//
@@ -40,12 +40,30 @@ void printConnectors(int arr[]){
 	cout << endl;
 }
 
+string printMap(point<TS> map[]) {
+	string rs = "";
+	cout << "<table>";
+	for(int y = 0; y < SIZE; y++) {
+		cout << "<tr>" << endl
+		for(int x = 0; x < SIZE; x++) {
+			rs += "<td style=\"background-color:";
+			rs += 
+		}
+		cout << "</tr>" << endl;
+	}
+	cout << "</table>";
+}
+
 
 int main (int argc, char** argv) {
-	point<TS> map[SIZE*SIZE];
-	mapManager<SIZE, TS> manager(map);
+	vector< point<TS> > map;
+	map.resize(SIZE*SIZE);
+	mapManager<SIZE, TS> manager(map.data());
 	int path[100]; // lives on the stack
 					// First element has pathLength !IMPORTANT
+	int startX, endX, startY, endY, cont;
+	
+	
 	
 	manager.insert(10, 10);
 	manager.remove(10, 10);
@@ -56,8 +74,26 @@ int main (int argc, char** argv) {
 	manager.insert(15, 15);
 	manager.remove(12, 12);
 	
-	manager.findPath(_2d_to_1d(10, 10, SIZE), _2d_to_1d(150, 10, SIZE), path);
-	printConnectors(path);
+	while(true){
+		cout << "start X: ";
+		cin  >> startX;
+		cout << "\nstartY: ";
+		cin  >> startY;
+		cout << "end X: ";
+		cin  >> endX;
+		cout << "\nend Y: ";
+		cin  >> endY;	
+		
+		manager.findPath(_2d_to_1d(startX, startY, SIZE), _2d_to_1d(endX, endY, SIZE), path);
+		printConnectors(path);
+		
+		cout << "continue?: (y/n)" << endl;
+		cin  >> cont;
+		if(cont != 'y')
+			break;
+	}
+	
+
 	
 	
     return 0;
